@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdio.h>
-#include "ConsoleGame.h"
-#include "GraphicalGame.h"
+#include "./cli/ConsoleGame.h"
+#include "./gui/GraphicalGame.h"
 
 int main(int argc, char * argv[]) {
 	int error = 0;

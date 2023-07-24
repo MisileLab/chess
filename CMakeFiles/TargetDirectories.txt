@@ -1,0 +1,3 @@
+/home/misile/chess/CMakeFiles/main.dir
+/home/misile/chess/CMakeFiles/edit_cache.dir
+/home/misile/chess/CMakeFiles/rebuild_cache.dir

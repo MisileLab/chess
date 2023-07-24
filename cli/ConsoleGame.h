@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include "Parser.h"
-#include "GameHandler.h"
+#include "../game/GameHandler.h"
 
 /*
 This module encapsulates the CLI game.

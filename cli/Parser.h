@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <limits.h>
-#include "ChessGlobalDefinitions.h"
+#include "../game/ChessGlobalDefinitions.h"
 
 #define MAX_LINE_LENGTH 1024
 #define NULL_CHARACTER '\0'

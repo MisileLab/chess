@@ -10,7 +10,7 @@
 #include "GuiUserColorWindow.h"
 #include "GuiGameWindow.h"
 #include "GuiSaveLoadWindow.h"
-#include "GameHandler.h"
+#include "../game/GameHandler.h"
 
 /*
 This module is responsible of handling the graphical game. The graphical game requires SDL v2 to be installed
