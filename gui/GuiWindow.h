@@ -1,8 +1,13 @@
 #ifndef WINDOW_H_
 #define WINDOW_H_
 
+#ifdef __linux__
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
+#else
+#include <SDL.h>
+#include <SDL_Video.h>
+#endif
 
 /*
 This is a generic window which provides an interface for common actions. Each

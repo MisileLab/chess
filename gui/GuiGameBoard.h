@@ -4,8 +4,13 @@
 #include "../game/GameHandler.h"
 #include "GuiHelpers.h"
 #include "GuiWidget.h"
+#ifdef __linux__
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
+#else
+#include <SDL.h>
+#include <SDL_Video.h>
+#endif
 
 /*
 The gui game board widget. It contains all the data required to present the

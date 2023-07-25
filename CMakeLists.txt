@@ -49,12 +49,11 @@ add_executable(
     gui/GuiWindow.h
 )
 
-# Set the path to SDL2 installation directory
-# Replace '/path/to/sdl' with the actual path where SDL2 is installed
-set(SDL2_DIR "/usr/lib/SDL2")
-
-# Use find_package to locate SDL2
+# Find and configure SDL2
 find_package(SDL2 REQUIRED)
 
+# Set the include directories for the target
+target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIRS})
+
 # Link SDL2 libraries to the executable
-target_link_libraries(main PRIVATE SDL2::SDL2 SDL2::SDL2main)
+target_link_libraries(main PRIVATE ${SDL2_LIBRARIES})

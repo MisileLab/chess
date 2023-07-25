@@ -1,8 +1,13 @@
 #ifndef WIDGET_H_
 #define WIDGET_H_
 
+#ifdef __linux__
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
+#else
+#include <SDL.h>
+#include <SDL_Video.h>
+#endif
 
 typedef struct widget_t GuiWidget;
 struct widget_t {

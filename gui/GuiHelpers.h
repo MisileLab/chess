@@ -2,8 +2,13 @@
 #define GUI_HANDLER_H
 
 #include "../game/GameHandler.h"
+#ifdef __linux__
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
+#else
+#include <SDL.h>
+#include <SDL_Video.h>
+#endif
 
 /*
 Common helpers for the gui modules.
