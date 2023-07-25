@@ -213,7 +213,7 @@ static void guiHandleUserEventSaveSlotChosen(GraphicalGame *gg, bool success) {
   }
 
   else {
-    guiSwitchWindow(gg, GUI_WINDOW_GAME);
+    guiSwitchWindow(gg, GUI_WINDOW_WELCOME);
   }
 }
 
@@ -362,7 +362,7 @@ int graphicalGameRun() {
         break;
       case GUI_USEREVENT_QUIT_FROM_GAME_WINDOW:
         if (guiPromtForUnsavedGame(gg, true))
-          gg->errorOrStop = true;
+          guiSwitchWindow(gg, GUI_WINDOW_WELCOME);
         break;
       case GUI_USEREVENT_MENU_FROM_GAME_WINDOW:
         if (guiPromtForUnsavedGame(gg, false))

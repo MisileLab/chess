@@ -1,4 +1,17 @@
 #include "GuiSaveLoadWindow.h"
+#include <sys/stat.h>   // For Unix-like systems
+#ifdef _WIN32
+    #include <direct.h> // For Windows
+    #define mkdir(path, mode) _mkdir(path)
+#endif
+
+int dir_exists(const char* path) {
+    struct stat st;
+    if (stat(path, &st) == 0) {
+        return S_ISDIR(st.st_mode);
+    }
+    return 0;
+}
 
 /*
 Sets path with the right slot path. Assumes path has enough space.
@@ -9,6 +22,9 @@ static void getSlotPath(char * path, int slotNum) {
 
 static void guiSaveLoadWindowButtonSlotAction(int slotNum, bool saveRequested, GameHandler * gh) {
 	char path[GUI_MAX_PATH_LENGTH];
+	if (!dir_exists("saves")) {
+		mkdir("saves", 0700);
+	}
 	getSlotPath(path, slotNum);
 
 	// save
